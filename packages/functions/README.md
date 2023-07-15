@@ -9,6 +9,8 @@ Accepts any number of strings and allows for conditional values.
 
 ```tsx
 import { classNames } from '@lunchbreak/functions'
+// or
+import classNames from '@lunchbreak/functions/classNames'
 
 const Component = (large: boolean) => {
   return (

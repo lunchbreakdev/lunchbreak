@@ -10,6 +10,8 @@ Combines two or more React refs into one.
 import { forwardRef, useRef } from 'react'
 
 import { useCombinedRef } from '@lunchbreak/hooks'
+// or
+import useCombinedRef from '@lunchbreak/hooks/useCombinedRef'
 
 const Component = forwardRef<HTMLDivElement>((props, ref) => {
   const internalRef = useRef<HTMLDivElement>(null)

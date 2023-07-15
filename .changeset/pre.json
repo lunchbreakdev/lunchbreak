@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@lunchbreak/functions": "0.0.0",
+    "@lunchbreak/hooks": "0.0.0",
+    "@lunchbreak/react": "0.0.0"
+  },
+  "changesets": []
+}

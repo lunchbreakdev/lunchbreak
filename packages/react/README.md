@@ -8,6 +8,8 @@ Component to conditionally wrap content.
 
 ```tsx
 import { Wrap } from '@lunchbreak/react'
+// or
+import Wrap from '@lunchbreak/react/Wrap'
 
 const Component = (condition: boolean) => {
   return (

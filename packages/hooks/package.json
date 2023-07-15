@@ -27,7 +27,7 @@
     "build:declarations": "tsc --project tsconfig.build.json"
   },
   "peerDependencies": {
-    "react": "^17 || ^18"
+    "react": "^16.9.0 || ^17 || ^18"
   },
   "engines": {
     "node": "^16.20.0 || ^18.16.0 || >=20.0.0"

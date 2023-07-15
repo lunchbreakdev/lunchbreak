@@ -9,7 +9,7 @@ module.exports = (api) => {
           useBuiltIns: 'usage',
           corejs: 3,
           targets: {
-            browsers: '>0.3% and not dead',
+            browsers: '>0.3%, not dead',
             node: 'current',
           },
         },
@@ -27,6 +27,7 @@ module.exports = (api) => {
         ignore: ['**/*.test.tsx', '**/*.test.ts'],
       },
     },
+    minified: true,
     ignore: ['node_modules'],
   }
 }

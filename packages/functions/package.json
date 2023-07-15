@@ -26,9 +26,6 @@
     "build": "BABEL_ENV=build babel src --root-mode upward --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments",
     "build:declarations": "tsc --project tsconfig.build.json"
   },
-  "peerDependencies": {
-    "react": "^16.9.0 || ^17 || ^18"
-  },
   "engines": {
     "node": "^16.20.0 || ^18.16.0 || >=20.0.0"
   }
