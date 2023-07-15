@@ -1,0 +1,8 @@
+package/functions:
+- packages/functions/**/*
+
+package/hooks:
+- packages/hooks/**/*
+
+package/react:
+- packages/react/**/*

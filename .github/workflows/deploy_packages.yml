@@ -1,0 +1,46 @@
+name: Deploy Packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    if: github.event.sender.login == 'morganmspencer'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [18.x]
+    env:
+      CI: true
+      NODE_OPTIONS: --max-old-space-size=4096
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org/ # Needed for auth
+
+      - name: Install packages
+        run: yarn install --immutable
+
+      - name: Tests
+        run: yarn test
+
+      - name: Build packages
+        run: yarn build
+
+      - name: Publish
+        run: |
+          yarn config set -H 'npmAuthToken' "${{secrets.NPM_TOKEN}}"
+          if [ -f ".changeset/pre.json" ]; then
+              yarn workspaces foreach -v --no-private npm publish --access public --tolerate-republish --tag next
+          else
+              yarn workspaces foreach -p -j 10 -v --no-private npm publish --access public --tolerate-republish
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
