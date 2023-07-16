@@ -2,9 +2,11 @@
   "name": "root",
   "private": true,
   "workspaces": [
+    "app",
     "packages/*"
   ],
   "scripts": {
+    "dev": "yarn workspace app run dev",
     "test": "jest",
     "build": "yarn workspaces foreach -pv run build && yarn workspaces foreach -pv run build:declarations",
     "prerelease": "yarn build",
@@ -15,14 +17,15 @@
     "@babel/cli": "7.22.9",
     "@babel/core": "7.22.9",
     "@babel/preset-env": "7.22.9",
-    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-react": "7.22.5",
     "@babel/preset-typescript": "7.22.5",
+    "@changesets/cli": "2.26.2",
     "@types/jest": "29.5.3",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "6.0.0",
-    "@typescript-eslint/parser": "6.0.0",
-    "eslint": "8.45.0",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "@typescript-eslint/eslint-plugin": "5.61.0",
+    "@typescript-eslint/parser": "5.61.0",
+    "eslint": "8.44.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-prettier": "5.0.0",
@@ -34,10 +37,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "ts-jest": "29.1.1",
-    "typescript": "5.1.6"
+    "typescript": "5.0.2"
   },
-  "packageManager": "yarn@3.6.1",
-  "dependencies": {
-    "@changesets/cli": "^2.26.2"
-  }
+  "packageManager": "yarn@3.6.1"
 }
